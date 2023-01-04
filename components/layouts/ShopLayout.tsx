@@ -1,5 +1,9 @@
-import Head from "next/head"
 import { FC } from "react"
+import Head from "next/head"
+import { Navbar } from "../ui/Navbar"
+import { Lato } from '@next/font/google'
+
+const lato = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] })
 
 interface Props {
   children: JSX.Element
@@ -23,7 +27,11 @@ export const ShopLayout: FC<Props> = ({ children, imageFullUrl, pageDescription,
 
       </Head>
 
-      <main className="px-24">
+      <nav className={`${ lato.className } px-24`}>
+        <Navbar />
+      </nav>
+
+      <main className={`${ lato.className } px-24`}>
         { children }
       </main>
 
