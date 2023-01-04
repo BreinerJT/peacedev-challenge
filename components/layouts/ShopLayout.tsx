@@ -6,7 +6,7 @@ import { Lato } from '@next/font/google'
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] })
 
 interface Props {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
   imageFullUrl?: string
   pageDescription: string
   title: string
