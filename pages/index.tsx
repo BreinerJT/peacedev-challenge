@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 import { ShopLayout } from '../components/layouts/ShopLayout'
-import { CategoryPillList, CategorySection } from '../components/ui'
+import { CategoryPillList, CategorySection, Footer } from '../components/ui'
 import { storeApi } from '../apis'
 import { Category, Product } from '../interfaces'
 
@@ -12,6 +12,7 @@ interface Props {
 const HomePage: NextPage<Props> = ({ categories, products }) => {
   return (
     <ShopLayout title='Megamart' pageDescription='Megamart Shop'>
+      
       <div className='absolute left-0 w-screen h-[1px] bg-gray-200' />
         <CategoryPillList categories={ categories } />
       <div className='absolute left-0 w-screen h-[1px] bg-gray-200' />
@@ -46,6 +47,10 @@ const HomePage: NextPage<Props> = ({ categories, products }) => {
           squareCard
         />
       </section>
+
+      <footer>
+        <Footer categories={ categories } />
+      </footer>
 
     </ShopLayout>
   )
