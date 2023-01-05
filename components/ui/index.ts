@@ -1,3 +1,5 @@
 export * from './CategoryPill'
 export * from './CategoryPillList'
+export * from './CategorySection'
 export * from './Navbar'
+export * from './ProductCard'
