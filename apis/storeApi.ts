@@ -30,3 +30,15 @@ export const getProductsByCategory = async (category: string): Promise<Product[]
     return null
   }
 }
+
+export const getProduct = async (id: string) => {
+  try {
+    const resp = await fetch(baseUrl + `/products/${ id }`)
+    const data = await resp.json()
+
+    return data
+    
+  } catch (error) {
+    return null
+  }
+}
