@@ -90,12 +90,12 @@ export const Footer: FC<Props> = ({ categories }) => {
         © { new Date().getFullYear() } All rights reserved. Reliance Retail Ltd.
       </p>
        
-      <CircleBackground 
-        externalRadius={450} 
-        internalRadius={420} 
-        top='-top-28' 
-        right='-right-28' 
-      />
+       <div className="absolute -top-28 -right-28">
+        <CircleBackground 
+          externalRadius={450} 
+          internalRadius={420} 
+        />
+       </div>
 
     </div>
   )
