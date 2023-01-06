@@ -1,7 +1,10 @@
+import { useContext } from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { FiShoppingCart } from 'react-icons/fi'
+import { CartContext } from '../../context'
 import { ShopLayout } from '../../components/layouts/ShopLayout'
+import { UpdateCartButtons } from '../../components/ui'
 import { formatPrice, formatRating } from '../../helpers'
 import { storeApi } from '../../apis'
 import { Product } from '../../interfaces'
@@ -11,6 +14,9 @@ interface Props {
 }
 
 const ProductPage: NextPage<Props> = ({ product }) => {
+  const { cart, addProductToCart } = useContext(CartContext)
+  const isProductInCart = cart.find(item => item.product.id === product.id)
+
   return (
     <ShopLayout 
       pageDescription={ product.title } 
@@ -36,13 +42,24 @@ const ProductPage: NextPage<Props> = ({ product }) => {
           <p className='font-bold text-xl'>Price: { formatPrice(product.price) }</p>
           <p className='grid gap-1 font-bold text-xl'>Description:<span className='pl-4 font-normal text-base'>{ product.description }</span></p>
           <p className='font-bold text-xl'>Rated <span className='text-yellow-500'>{ formatRating(product.rating.rate) }</span> by { product.rating.count } people</p>
-          <div>
-            <button
-              className='flex gap-2 justify-center items-center font-bold bg-secondary py-1 px-2 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300'
-            >
-              <FiShoppingCart />
-              Add to cart
-            </button>
+          <div className='flex'>
+            {
+              isProductInCart
+                ? (
+                  <UpdateCartButtons id={ product.id }>
+                    { cart.find(item => item.product.id === product.id)!.quantity }
+                  </UpdateCartButtons>
+                )
+                : (
+                  <button
+                    onClick={ () => addProductToCart(product) }
+                    className='flex gap-2 justify-center items-center font-bold bg-secondary py-1 px-2 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300'
+                  >
+                    <FiShoppingCart />
+                    Add to cart
+                  </button>
+                )
+            }
           </div>
         </div>
 
