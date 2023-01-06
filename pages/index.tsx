@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 import { ShopLayout } from '../components/layouts/ShopLayout'
-import { CategoryPillList, CategorySection, Footer } from '../components/ui'
+import { CategoryPillList, CategorySection, Footer, ProductsCarousel } from '../components/ui'
 import { storeApi } from '../apis'
 import { Category, Product } from '../interfaces'
 
@@ -16,6 +16,10 @@ const HomePage: NextPage<Props> = ({ categories, products }) => {
       <div className='absolute left-0 w-screen h-[1px] bg-gray-200' />
         <CategoryPillList categories={ categories } />
       <div className='absolute left-0 w-screen h-[1px] bg-gray-200' />
+
+      <section className='py-4'>
+        <ProductsCarousel products={ products } />
+      </section>
 
       <section className='grid gap-16 py-16'>
         <CategorySection 
