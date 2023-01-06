@@ -31,12 +31,12 @@ export const Navbar = () => {
 
       <div className='flex gap-5 justify-between'>
 
-        <Link href='/signIn'>
+        <button>
           <span className='flex gap-2 items-center font-bold text-slate-500'>
             <RiUser3Line className='text-primary' size={20} />
             Sign Up/Sign In
           </span>
-        </Link>
+        </button>
 
         <div className='border-2 border-transparent border-r-terciary' />
 

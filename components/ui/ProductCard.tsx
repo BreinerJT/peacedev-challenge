@@ -27,7 +27,7 @@ export const ProductCard: FC<Props> = (
       {
         circularCard && (
         <article
-          onClick={ () => router.push(`/${ href }/${ id }`) }
+          onClick={ () => router.push(`/product/${ id }`) }
           className='grid gap-4 items-center justify-center [&:hover>div]:border-primary [&:hover>div]:shadow-lg cursor-pointer'
         >
 
@@ -46,7 +46,7 @@ export const ProductCard: FC<Props> = (
 
       { horizontalCard && (
         <article
-          onClick={ () => router.push(`/${ href }/${ id }`) }
+          onClick={ () => router.push(`/product/${ id }`) }
           className='grid gap-4 items-center justify-center bg-terciary [&:hover>img]:border-primary [&:hover>img]:shadow-lg cursor-pointer'
         >
 
@@ -61,7 +61,7 @@ export const ProductCard: FC<Props> = (
 
       { squareCard && (
         <article
-          onClick={ () => router.push(`/${ href }/${ id }`) }
+          onClick={ () => router.push(`/product/${ id }`) }
           className='grid gap-4 items-center justify-center [&:hover>div]:border-primary [&:hover>div]:shadow-lg cursor-pointer'
         >
 
@@ -81,7 +81,7 @@ export const ProductCard: FC<Props> = (
 
       { verticalCard && (
         <article
-          onClick={ () => router.push(`/${ href }/${ id }`) }
+          onClick={ () => router.push(`/product/${ id }`) }
           className='w-48 h-56 grid gap-4 items-center rounded-xl border bg-terciary border-neutral-200 hover:border-primary hover:shadow-lg cursor-pointer'
         >
           <img 

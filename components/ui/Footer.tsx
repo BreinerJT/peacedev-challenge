@@ -4,7 +4,6 @@ import { BiPhoneCall } from 'react-icons/bi'
 import { CircleBackground, FooterItemList, FooterListContainer } from "./"
 import { AppStoreButton, PlayStoreButton } from "./buttons"
 import { services } from "../../data"
-import { formatCategoryToValidHref } from "../../helpers"
 import { Category } from "../../interfaces"
 
 interface Props {
@@ -60,7 +59,7 @@ export const Footer: FC<Props> = ({ categories }) => {
               categories.map(category => (
                 <FooterItemList
                   key={ category } 
-                  href={ formatCategoryToValidHref( category ) }
+                  href={ category }
                   title={ category }
                 />
               ))

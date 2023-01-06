@@ -26,7 +26,7 @@ const HomePage: NextPage<Props> = ({ categories, products }) => {
           title='Everything for'
           highlight='Men'
           products={ products.filter(product => product.category === 'men\'s clothing') } 
-          src='/men' 
+          src="/men's clothing"
           verticalCard
         />
         <CategorySection 
@@ -40,7 +40,7 @@ const HomePage: NextPage<Props> = ({ categories, products }) => {
           title='Everything for'
           highlight='Women'
           products={ products.filter(product => product.category === 'women\'s clothing') } 
-          src='/women' 
+          src="/women's clothing" 
           horizontalCard
         />
         <CategorySection 

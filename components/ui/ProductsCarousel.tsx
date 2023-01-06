@@ -34,7 +34,7 @@ export const ProductsCarousel: FC<Props> = ({ products }) => {
         <div
           style={{ backgroundImage: `url(${selected.image})` }}
           className='w-44 h-44 bg-center bg-contain bg-no-repeat cursor-pointer'
-          onClick={ () => router.push(`/${ formatCategoryToValidHref(selected.category) }/${ selected.id }`) }
+          onClick={ () => router.push(`/product/${ selected.id }`) }
         />
 
       </div>
