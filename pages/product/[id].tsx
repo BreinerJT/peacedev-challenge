@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { FiShoppingCart } from 'react-icons/fi'

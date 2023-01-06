@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { BsDash } from 'react-icons/bs'
 import { RxDotFilled } from 'react-icons/rx'
-import { CircleBackground } from './CircleBackground'
+import { CircleBackground } from './'
 import { useCarousel } from '../../hooks/useCarousel'
-import { formatCategoryToValidHref, formatRating } from '../../helpers'
+import { formatRating } from '../../helpers'
 import { Product } from '../../interfaces'
 
 interface Props {
