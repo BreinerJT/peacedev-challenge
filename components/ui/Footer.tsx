@@ -93,7 +93,7 @@ export const Footer: FC<Props> = ({ categories }) => {
        <div className="absolute -top-28 -right-28">
         <CircleBackground 
           externalRadius={450} 
-          internalRadius={420} 
+          internalRadius={426} 
         />
        </div>
 

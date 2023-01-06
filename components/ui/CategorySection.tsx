@@ -25,19 +25,24 @@ export const CategorySection: FC<Props> = ({ highlight, products, src, title, ..
 
   return (
     <article className="grid gap-8">
-      <div className="flex justify-between border-[1px] border-transparent border-b-neutral-200">
-        <h2 className="text-slate-500 font-bold text-lg mt-2">
+
+      <div className="flex justify-between border-[1px] border-transparent border-b-gray-200">
+
+        <h2 className="text-slate-500 font-bold text-lg mt-2 select-none">
           { title } {' '}
           <span className="text-primary">{ highlight }</span>
           <div className="rounded-full bg-primary w-full h-[3px] mt-2" />
         </h2>
+
         <Link href={ src } className="flex gap-1 items-center text-sm [&:hover>span]:translate-x-1">
           View All
           <span className="text-primary transition-transform duration-300">
             <FiChevronRight size='18' />
           </span>
         </Link>
+
       </div>
+
       <section className="flex justify-between items-center">
         {
           draft.map(product => (

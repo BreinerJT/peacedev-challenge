@@ -31,7 +31,7 @@ export const ProductCard: FC<Props> = (
           className='grid gap-4 items-center justify-center [&:hover>div]:border-primary [&:hover>div]:shadow-lg cursor-pointer'
         >
 
-          <div className="grid items-center mx-auto p-2 rounded-full bg-neutral-100 h-28 w-28 border border-transparent">
+          <div className="grid items-center mx-auto p-2 rounded-full bg-terciary h-28 w-28 border border-transparent">
             <img 
               className="w-16 h-16 object-contain mx-auto" 
               src={ image } 
@@ -47,7 +47,7 @@ export const ProductCard: FC<Props> = (
       { horizontalCard && (
         <article
           onClick={ () => router.push(`/${ href }/${ id }`) }
-          className='grid gap-4 items-center justify-center bg-neutral-100 [&:hover>img]:border-primary [&:hover>img]:shadow-lg cursor-pointer'
+          className='grid gap-4 items-center justify-center bg-terciary [&:hover>img]:border-primary [&:hover>img]:shadow-lg cursor-pointer'
         >
 
           <img 
@@ -65,15 +65,15 @@ export const ProductCard: FC<Props> = (
           className='grid gap-4 items-center justify-center [&:hover>div]:border-primary [&:hover>div]:shadow-lg cursor-pointer'
         >
 
-          <div className="grid items-center mx-auto p-2 rounded-lg h-28 w-28 bg-neutral-100 border border-transparent">
+          <div className="grid items-center mx-auto p-2 rounded-lg h-40 w-40 bg-terciary border border-transparent">
             <img 
-                className="w-16 h-16 object-contain mx-auto" 
+                className="w-28 h-28 object-contain mx-auto" 
                 src={ image } 
                 alt={ title } 
               />
           </div>
 
-          <h3 className="text-center px-2">{ formatTitle( title ) }</h3>
+          <h3 className="text-slate-500 font-bold text-sm text-center px-2">{ formatTitle( title ) }</h3>
           <h4 className="text-yellow-500 text-center">{ formatRating(rating) }</h4>
 
         </article>
@@ -82,15 +82,15 @@ export const ProductCard: FC<Props> = (
       { verticalCard && (
         <article
           onClick={ () => router.push(`/${ href }/${ id }`) }
-          className='p-2 w-44 h-52 grid gap-4 items-center rounded-xl border bg-neutral-100 border-neutral-200 hover:border-primary hover:shadow-lg cursor-pointer'
+          className='w-48 h-56 grid gap-4 items-center rounded-xl border bg-terciary border-neutral-200 hover:border-primary hover:shadow-lg cursor-pointer'
         >
           <img 
-            className="w-20 h-20 object-contain mx-auto" 
+            className="w-24 h-28 object-contain mx-auto p-2" 
             src={ image } 
             alt={ title } 
           />
 
-          <div className="grid gap-2 text-sm px-2">
+          <div className="grid place-self-end rounded-b-xl gap-2 text-sm p-2 bg-white w-full">
             <h3 className="font-bold">{ formatTitle( title ) }</h3>
             <h4 className="justify-end font-black">{ formatPrice( price ) }</h4>
           </div>

@@ -17,7 +17,8 @@ export const ProductsCarousel: FC<Props> = ({ products }) => {
   const router = useRouter()
 
   return (
-    <div className='h-60 w-full rounded-lg m-auto py-16 px-4 relative overflow-hidden group'>
+    <>
+      <div className='h-60 w-full rounded-2xl m-auto py-16 px-4 relative overflow-hidden'>
 
       <div 
         className='flex h-full justify-around items-center select-none'
@@ -32,24 +33,10 @@ export const ProductsCarousel: FC<Props> = ({ products }) => {
         
         <div
           style={{ backgroundImage: `url(${selected.image})` }}
-          className='w-44 h-44 bg-center bg-contain bg-no-repeat duration-300 group-hover:scale-110 z-10 cursor-pointer'
+          className='w-44 h-44 bg-center bg-contain bg-no-repeat cursor-pointer'
           onClick={ () => router.push(`/${ formatCategoryToValidHref(selected.category) }/${ selected.id }`) }
         />
 
-      </div>
-
-      <div 
-        onClick={prevSlide} 
-        className='absolute top-[50%] -translate-x-0 translate-y-[-50%] -left-8 text-2xl rounded-full p-6 bg-primary text-white cursor-pointer [&:hover>svg]:translate-x-0'
-      >
-        <FiChevronLeft size={30} className='translate-x-2 duration-300' />
-      </div>
-
-      <div 
-        onClick={nextSlide} 
-        className='absolute top-[50%] -translate-x-0 translate-y-[-50%] -right-8 text-2xl rounded-full p-6 bg-primary text-white cursor-pointer [&:hover>svg]:translate-x-0'
-      >
-        <FiChevronRight size={30} className='-translate-x-2 duration-300' />
       </div>
 
       <div className='absolute -top-60 right-96'>
@@ -75,6 +62,27 @@ export const ProductsCarousel: FC<Props> = ({ products }) => {
         ))}
       </div>
 
-    </div>
+      </div>
+
+      <div 
+        onClick={prevSlide} 
+        className='absolute top-[50%] translate-y-[-50%] left-14 text-2xl rounded-full p-2 bg-white cursor-pointer'
+      >
+        <div className='rounded-full p-4 bg-secondary text-primary'>
+          <FiChevronLeft size={30} strokeWidth={1.5} />
+        </div>
+      </div>
+
+      <div 
+        onClick={nextSlide} 
+        className='absolute top-[50%] translate-y-[-50%] right-14 text-2xl rounded-full p-2 bg-white cursor-pointer'
+      >
+        <div className='rounded-full p-4 bg-secondary text-primary'>
+          <FiChevronRight size={30} strokeWidth={1.5} />
+        </div>
+      </div>
+
+    </>
+    
   )
 }
