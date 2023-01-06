@@ -17,3 +17,16 @@ export const getProducts = async (): Promise<Product[]> => {
 
   return resp
 }
+
+export const getProductsByCategory = async (category: string): Promise<Product[] | null> => {
+  
+  try {
+    const resp = await fetch(baseUrl + `/products/category/${ category }`)
+    const data = await resp.json()
+
+    return data
+    
+  } catch (error) {
+    return null
+  }
+}
