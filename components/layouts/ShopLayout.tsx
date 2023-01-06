@@ -1,7 +1,7 @@
 import { FC } from "react"
 import Head from "next/head"
-import { Navbar } from "../ui/Navbar"
 import { Lato } from '@next/font/google'
+import { Navbar, Strip } from "../ui"
 
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700', '900'] })
 
@@ -26,6 +26,10 @@ export const ShopLayout: FC<Props> = ({ children, imageFullUrl, pageDescription,
         )}
 
       </Head>
+
+      <header className={`${ lato.className }`}>
+        <Strip />
+      </header>
 
       <nav className={`${ lato.className } px-24`}>
         <Navbar />
